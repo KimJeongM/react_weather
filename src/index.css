@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Outfit:wght@100..900&family=Quicksand:wght@300..700&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap'); 
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');  */
+
+ :root{
+    --outer-padding:20px;
+    --inline-gap : 24px;
+}
+@layer reset, layout;
+@layer reset {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box
+    }
+    body {
+        min-height: 100%;
+        background: #fdd474;
+        font-family: "Google Sans Flex", sans-serif;
+        color: #333
+    }
+    input {
+        font-size: 16px;
+        border: none;
+        color: #333;
+        background: transparent;
+    }
+    input:focus {
+        outline: none;
+    }
+    button {
+        background: transparent;
+        outline: none;
+        border: none;
+        font: inherit;
+        user-select: none;
+        cursor: pointer;
+        white-space: nowrap
+    }
+    li {
+        list-style-type: none;
+    }
+    strong,
+    em {
+        font-style: normal;
+    }
+}
+@layer layout{
+    .wrap{display:flex; flex-direction: column;}
+}
+
+/* 기본 스타일 (모든 아이콘에 공통 적용) */
+.weather-icon {
+    width: 100%; 
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block; 
+    vertical-align:top; 
+}
+.weather-0 {
+    background-image: url('./assets/icon/w0.png');
+}
+.night.weather-0 {
+    background-image: url('./assets/icon/w0-night.png');
+}
+.weather-1 {
+    background-image: url('./assets/icon/w1.png');
+}
+.night.weather-1 {
+    background-image: url('./assets/icon/w1-night.png');
+}
+.weather-2 {
+    background-image: url('./assets/icon/w2.png');
+}
+.night.weather-2 {
+    background-image: url('./assets/icon/w2-night.png');
+}
+.weather-3 {
+    background-image: url('./assets/icon/w3.png');
+}
+.weather-45 {
+    background-image: url('./assets/icon/w45.png');
+}
+.weather-48 {
+    background-image: url('./assets/icon/w48.png');
+}
+.weather-51 {
+    background-image: url('./assets/icon/w51.png');
+}
+.weather-53 {
+    background-image: url('./assets/icon/w53.png');
+}
+.weather-55 {
+    background-image: url('./assets/icon/w55.png');
+}
+.weather-56 {
+    background-image: url('./assets/icon/w56.png');
+}
+.weather-57 {
+    background-image: url('./assets/icon/w57.png');
+}
+.weather-61 {
+    background-image: url('./assets/icon/w80_61.png');
+}
+.weather-63 {
+    background-image: url('./assets/icon/w81_63.png');
+}
+.weather-65 {
+    background-image: url('./assets/icon/w82_65.png');
+}
+.weather-66 {
+    background-image: url('./assets/icon/w66.png');
+}
+.weather-67 {
+    background-image: url('./assets/icon/w67.png');
+}
+.weather-71 {
+    background-image: url('./assets/icon/w85_71.png');
+}
+.weather-73 {
+    background-image: url('./assets/icon/w73.png');
+}
+.weather-75 {
+    background-image: url('./assets/icon/w86_75.png');
+}
+.weather-77 {
+    background-image: url('./assets/icon/w77.png');
+}
+.weather-80 {
+    background-image: url('./assets/icon/w80_61.png');
+}
+.weather-81 {
+    background-image: url('./assets/icon/w81_63.png');
+}
+.weather-82 {
+    background-image: url('./assets/icon/w82_65.png');
+}
+.weather-85 {
+    background-image: url('./assets/icon/w85_71.png');
+}
+.weather-86 {
+    background-image: url('./assets/icon/w86_75.png');
+}
+.weather-95 {
+    background-image: url('./assets/icon/w95.png');
+}
+.weather-96 {
+    background-image: url('./assets/icon/w96_99.png');
+}
+.weather-99 {
+    background-image: url('./assets/icon/w96_99.png');
+}
+
+.detail-wrap{
+    background:#fff; 
+    border-radius:16px 16px 0 0; 
+    position: relative;
+    z-index: 2;
+    min-height:calc(100vh + 20px - 140px); 
+    padding-block:30px; 
+}   
+.data-box {
+    width: calc(100vw - 40px);
+    margin: 0 auto;
+    background: #eee;
+    border-radius: 16px;
+    padding: 20px var(--inline-gap);
+    position:relative;
+    overflow:hidden; 
+    &.is-pseudo::before, 
+    &.is-pseudo::after{
+        content:''; 
+        width:var(--inline-gap);
+        height:100%; 
+        position:absolute; 
+        top:0; 
+        left:0; 
+        background:linear-gradient(90deg,rgba(238, 238, 238, 1) 0%, rgba(238, 238, 238, 1) 60%, rgba(238, 238, 238, 0) 100%); 
+    }
+    &.is-pseudo::after{
+        left:auto;
+        right:0; 
+        transform:scale(-1)
+    }
+   
+    .scroll-box{
+        --inline-gap : 24px;
+        margin:0 calc(var(--inline-gap) * -1);
+        overflow-y: hidden;
+		overflow-x: auto;
+        &::-webkit-scrollbar {
+            height:5px;
+        }
+        &::-webkit-scrollbar-track{
+            background-color:#eee; 
+        }
+        &::-webkit-scrollbar-thumb { 
+            background-color: #ccc;
+        }
+        
+        .inner-list{
+            padding:0 var(--inline-gap); 
+        }
+
+    }
+    .data-title {
+        margin-bottom: 16px;
+        font-size:16px;
+        color:#2c2c2e; 
+        letter-spacing: -0.25px;
+        font-weight:700;
+    }
+}
+@media (pointer:coarse) and (hover : none){
+    .scroll-box{
+        scrollbar-width:unset;
+        scrollbar-color: unset
+    }
+    .scroll-box::-webkit-scrollbar{
+        display:none;
+    }
+}
+
+
+
+
+           

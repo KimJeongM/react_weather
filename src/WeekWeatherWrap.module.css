@@ -1,0 +1,44 @@
+.week-weather-wrap{
+    padding:var(--outer-padding); 
+    .week-item{
+        display:grid; 
+        grid-template-columns: 25% 1fr 25%;
+        gap:10px;
+        align-items:center; 
+        border-top:1px solid #e7e7e7;
+        padding:7px 5px; 
+        &:first-child{
+            border-top:none;
+            padding-top:0
+        }
+        &.today{background:#ccc}
+    }
+    .date{
+        font-size:14px;
+        font-weight:700; 
+        color:#333; 
+        text-align:left;
+    }
+    .status{
+        text-align:center; 
+    }
+    .item-temper{
+        text-align:right; 
+    }
+    .w-ico{
+        display:inline-block; 
+        vertical-align:top; 
+        width:30px; 
+        height:30px;
+        & + .w-ico{
+            margin-left:10px
+        }
+    }
+    .item-temper{
+        font-size:14px;
+        font-weight:700; 
+        .highest{
+            margin-left:10px;
+        }
+    }
+}

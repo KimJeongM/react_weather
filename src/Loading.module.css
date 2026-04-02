@@ -1,0 +1,44 @@
+.loading-wrap {
+    position: fixed;
+    inset: 0;
+    background: #fdd474;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loading-box {
+    --h: 14px;
+    width: 70px;
+    height: var(--h);
+    border-radius: 99px;
+    background: #fff;
+    position: relative;
+}
+
+.loading-pointer {
+    display: inline-block;
+    width: calc(var(--h) - 4px);
+    aspect-ratio: 1/1;
+    background: #fdd474;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    animation: pointer-move 0.7s alternate infinite;
+    animation-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.loading-text {
+    font-size: 16px;
+    color: #fff;
+    filter: drop-shadow(1px 1px 1px rgba(00,00,00,0.25));
+}
+
+@keyframes pointer-move {
+    to {
+        left: calc(100% - 12px - 2px);
+    }
+}

@@ -1,0 +1,37 @@
+.now-weather-wrap{
+    padding:var(--outer-padding); 
+    padding-block:30px 20px;
+    background:#fdd474; 
+    display:flex; 
+    flex-direction:column; 
+    align-items: center; 
+    justify-content: center; 
+    position:relative;
+    gap:10px;
+    .now-position{
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight:700;
+        font-size:22px;
+        letter-spacing: -0.5px;
+    }
+    .weather-code{
+        width:70px;
+        aspect-ratio: 1/1;
+        flex-shrink:0
+    }
+    .search-area{
+        position:absolute; 
+        right:10px;
+        top:10px;
+    }
+     .weather-state{
+        display:flex; 
+        justify-content: center;
+        align-items: center;
+        gap:10px
+    }
+    .temper{
+        font-weight:700; 
+        font-size:30px;
+    }
+}
