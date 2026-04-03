@@ -27,7 +27,7 @@ export default function NowWeatherWrap({nowWeather, popupHandler, weatherCity, d
                 className={styles['search-area']} 
                 onClick={clickHandler}
             >
-                {<FontAwesomeIcon icon={faLocationDot} style={{color:'white'}}/>}
+                {<FontAwesomeIcon icon={faLocationDot} style={{color:'rgb(51,51,51)'}}/>}
             </button>
         </section>
     );
