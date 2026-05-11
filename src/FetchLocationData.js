@@ -15,7 +15,7 @@ async function searchLocation(city){
     }
     try{
         const response = await fetch(
-            `/kakao/v2/local/search/address.json?query=${encodeURIComponent(city)}`,
+            `https://dapi.kakao.com/v2/local/search/address.json?query=${encodeURIComponent(city)}`,
             {
                 headers: { "Authorization": `KakaoAK ${KEY}` }
             }
@@ -39,7 +39,7 @@ async function searchLocation(city){
 
 async function searchAddress(location){
     const {lat, lng} = location; 
-    const response = await fetch(`/kakao/v2/local/geo/coord2regioncode.json?x=${lng}&y=${lat}`, 
+    const response = await fetch(`https://dapi.kakao.com/v2/local/geo/coord2regioncode.json?x=${lng}&y=${lat}`, 
         {
             headers: {
                 Authorization: `KakaoAK ${KEY}`,
