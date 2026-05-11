@@ -36,7 +36,7 @@
         height:45px;
         width:45px; 
         border-radius:50%;
-        background-color:#25ac5f;
+        background-color:#782ffe;
         position:absolute;
         right:0; 
         top:0
@@ -59,6 +59,25 @@
         transform:translateX(-50%)
         svg{
             width:10px;
+        }
+    }
+    .result-area{
+        width:100%; 
+        border:1px solid red; 
+        padding-block:10px;
+        overflow-y:auto;
+        overflow-x:hidden;
+        max-height:300px;
+        margin-block:20px; 
+
+        .result-list{
+            .result-item button{
+                border-bottom:1px solid #d3d6d9; 
+                padding-block:10px;
+                font-size:14px;
+                width:100%;
+                text-align:left; 
+            }
         }
     }
 }

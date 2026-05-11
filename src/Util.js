@@ -16,3 +16,10 @@ export function getSplitArray(str, splitString = 'T'){
 export function getNumberTime(time) {
     return Number(String(time).split(':')[0]); 
 }
+
+export function formatDate(date) {
+    const fullYear = date.getFullYear();
+    const mm = String(date.getMonth() + 1).padStart(2, '0'); 
+    const dd = String(date.getDate()).padStart(2, '0'); 
+    return `${fullYear}-${mm}-${dd}`
+}

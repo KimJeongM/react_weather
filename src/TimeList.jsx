@@ -1,5 +1,6 @@
 import TimeItem from "./TimeItem";
 import styles from './TimeWeatherWrap.module.css'; 
+import {formatDate} from './Util';
 
 export default function TimeList({weatherData, dailyData}){
     /* 현재 시간으로 부터 24시간 후 까지 보여준다. */
@@ -53,12 +54,7 @@ export default function TimeList({weatherData, dailyData}){
     ); 
 }
 
-function formatDate(date) {
-    const fullYear = date.getFullYear();
-    const mm = String(date.getMonth() + 1).padStart(2, '0'); 
-    const dd = String(date.getDate()).padStart(2, '0'); 
-    return `${fullYear}-${mm}-${dd}`
-}
+
 
 
 

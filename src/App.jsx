@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SearchArea from "./SeachArea";
+import SearchArea from "./SearchArea";
 import NowWeatherWrap from "./NowWeatherWrap";
 import WeekWeatherWrap from "./WeekWeatherWrap";
 import WeekList from "./WeekList";
@@ -39,6 +39,7 @@ function  App() {
                 }); 
                 const coordsObj = {lat : position.coords.latitude, lng : position.coords.longitude}
                 const myCity = await fetchReverseLocationData(coordsObj); 
+               
                 await getCityWeather(myCity);
             } catch(error){
                 console.error('로딩 중 오류', error);
@@ -66,11 +67,14 @@ function  App() {
     }
 
     async function getCityWeather(city){
-        const locationInfo = await fetchLocationData(city); 
+        let detailCity = city.split(' ').at(-1);
+        const locationInfo = await fetchLocationData(detailCity); 
+        locationInfo.city = locationInfo.detailCity.split(' ').at(-1);
+        
         const data = await FetchAPI(locationInfo); 
         setWeatherData(data[0]);
         setDailyData(data[1]);
-        setWeatherCity(city);
+        setWeatherCity(locationInfo.detailCity);
     }
 
     if(isLoading){

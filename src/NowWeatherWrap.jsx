@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 
 export default function NowWeatherWrap({nowWeather, popupHandler, weatherCity, dailyData}) {
+    if(!nowWeather.length) return null; 
     const [obj] = nowWeather; 
     const isDay = parseInt(getSplitArray(getSplitArray(dailyData.sunrise[0])[1], ':')[0]) < new Date().getHours() 
                         && new Date().getHours() < parseInt(getSplitArray(getSplitArray(dailyData.sunset[0])[1], ':')[0]);

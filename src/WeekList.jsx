@@ -45,7 +45,9 @@ function getWeatherCode(oneDayWeatherData){
         }else{
             const obj = {}; 
             codeMass.map((i) => obj[i] = (i in obj)? obj[i] + 1 : 1); 
-            code = Object.keys(obj).find((key)=>Math.max(...Object.values(obj)) == obj[key]); 
+            code = Object.keys(obj).find((key)=> {
+                return Math.max(...Object.values(obj)) == obj[key]
+            }); 
         }
         return code * 1; 
     }
